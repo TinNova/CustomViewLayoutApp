@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="32dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewEuro"
+        style="@style/TextViewCurrencyStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Euros"
+        app:layout_constraintStart_toStartOf="@+id/editTextCurrencyEuro"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextCurrencyEuro"
+        style="@style/EditTextCurrencyStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@id/editTextCurrencyDollar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEuro" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDollar"
+        style="@style/TextViewCurrencyStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dollar"
+        app:layout_constraintStart_toStartOf="@id/editTextCurrencyDollar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextCurrencyDollar"
+        style="@style/EditTextCurrencyStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextCurrencyEuro"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDollar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
