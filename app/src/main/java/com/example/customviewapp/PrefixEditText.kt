@@ -16,7 +16,17 @@ class PrefixEditText(
         private const val DEFAULT_PADDING = -1f
     }
     private var defaultLeftPadding = DEFAULT_PADDING
-    private var prefix = "€"
+    private var prefix = ""
+
+    init {
+        // Needed to obtain the StyledAttributes from the attrs.xml file
+        context.obtainStyledAttributes(attributes, R.styleable.PrefixEditText).let {
+
+            // Assigning the value of the prefix in the xml to the prefix var in this class
+            prefix = it.getString(R.styleable.PrefixEditText_prefix).orEmpty()
+            it.recycle()
+        }
+    }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
