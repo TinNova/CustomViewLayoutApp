@@ -4,4 +4,9 @@
     <declare-styleable name="PrefixEditText">
         <attr name="prefix" format="string"/>
     </declare-styleable>
+
+    <declare-styleable name="PrefixLayout">
+        <attr name="title_prefix_layout" format="string"/>
+        <attr name="prefix_prefix_layout" format="string"/>
+    </declare-styleable>
 </resources>

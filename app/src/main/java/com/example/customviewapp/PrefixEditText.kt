@@ -14,6 +14,7 @@ class PrefixEditText(
     companion object {
         private const val DEFAULT_PADDING = -1f
     }
+
     private var defaultLeftPadding = DEFAULT_PADDING
 
     private var prefix: String = ""
@@ -24,7 +25,8 @@ class PrefixEditText(
             invalidate()
         }
 
-    /** init block only needed to assign prefix via XML*/
+    /** We are not setting the prefix directly through the PrefixEditText, so this init is not needed.
+     * Instead we are now assigning it through the PrefixLayout class by calling assignPrefix() */
 //    init {
 //        context.obtainStyledAttributes(attributes, R.styleable.PrefixEditText).let {
 //
@@ -33,7 +35,7 @@ class PrefixEditText(
 //        }
 //    }
 
-    fun assignPrefix(prefix: String){
+    fun assignPrefix(prefix: String) {
         this.prefix = prefix
     }
 
