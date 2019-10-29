@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="@+id/editTextCurrencyEuro"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <com.example.customviewapp.PrefixEditText
         android:id="@+id/editTextCurrencyEuro"
         style="@style/EditTextCurrencyStyle"
         android:layout_width="0dp"
@@ -35,7 +35,7 @@
         app:layout_constraintStart_toStartOf="@id/editTextCurrencyDollar"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <com.example.customviewapp.PrefixEditText
         android:id="@+id/editTextCurrencyDollar"
         style="@style/EditTextCurrencyStyle"
         android:layout_width="0dp"

@@ -13,6 +13,7 @@
         <item name="android:paddingStart">0dp</item>
         <item name="android:textSize">24dp</item>
         <item name="android:hint">500</item>
+        <item name="android:inputType">number</item>
     </style>
 
     <style name="TextViewCurrencyStyle">
