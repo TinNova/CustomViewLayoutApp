@@ -24,8 +24,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toStartOf="@id/editTextCurrencyDollar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEuro"
-        app:prefix="€"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewEuro"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewDollar"
@@ -44,7 +43,6 @@
         android:layout_marginStart="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextCurrencyEuro"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDollar"
-        app:prefix="$"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewDollar"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

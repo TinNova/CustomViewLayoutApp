@@ -11,29 +11,38 @@ class PrefixEditText(
     attributes: AttributeSet
 ) : AppCompatEditText(context, attributes) {
 
-    // this is the original padding of the EditText, we will use i
     companion object {
         private const val DEFAULT_PADDING = -1f
     }
     private var defaultLeftPadding = DEFAULT_PADDING
-    private var prefix = ""
 
-    init {
-        // Needed to obtain the StyledAttributes from the attrs.xml file
-        context.obtainStyledAttributes(attributes, R.styleable.PrefixEditText).let {
-
-            // Assigning the value of the prefix in the xml to the prefix var in this class
-            prefix = it.getString(R.styleable.PrefixEditText_prefix).orEmpty()
-            it.recycle()
+    private var prefix: String = ""
+        set(value) {
+            field = value
+            calculatePrefix(field)
+            requestLayout()
+            invalidate()
         }
+
+    /** init block only needed to assign prefix via XML*/
+//    init {
+//        context.obtainStyledAttributes(attributes, R.styleable.PrefixEditText).let {
+//
+//            prefix = it.getString(R.styleable.PrefixEditText_prefix).orEmpty()
+//            it.recycle()
+//        }
+//    }
+
+    fun assignPrefix(prefix: String){
+        this.prefix = prefix
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        calculatePrefix()
+        calculatePrefix(prefix)
     }
 
-    private fun calculatePrefix() {
+    private fun calculatePrefix(prefix: String) {
         // if leftPadding is -1f, then it is a new EditText that hasn't had it's prefix set yet
         if (defaultLeftPadding == DEFAULT_PADDING) {
             val widths = FloatArray(prefix.length)
